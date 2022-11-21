@@ -1,3 +1,15 @@
+body{
+    background-color: gray;
+}
+
 .container{
+    border: 3px solid red;
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    
+}
+
+footer{
     border: 3px solid red;
 }
