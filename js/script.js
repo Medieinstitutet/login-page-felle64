@@ -15,6 +15,7 @@ function printLoginError(){
 //Visar att man har loggat in och att man är inloggad temp
 function printLoginSuccess(){
     alert("You have successfully logged in.")
+    //location.reload();
 }
 
 loginBtn.addEventListener("click", (evt) => {
@@ -22,6 +23,8 @@ loginBtn.addEventListener("click", (evt) => {
     //console.log("klick");
     let userName = inputName.value;
     let passWord = inputPsw.value;
+    localStorage.getItem("userName", userName);
+    localStorage.getItem("passWord", passWord);
     localStorage.setItem("userName", userName);
     localStorage.setItem("passWord", passWord);
 
