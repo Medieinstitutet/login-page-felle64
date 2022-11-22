@@ -5,7 +5,7 @@ const loginBtn = document.getElementById("loginBtn");
 
 let user = [
     {userName: "janne", passWord: "test"},
-    {userName: "Felix", passWord: "123"}
+    {userName: "felix", passWord: "123"}
 ];
 
 
@@ -23,20 +23,21 @@ function printLoginSuccess(){
     alert("You have successfully logged in.")
 }
 
-loginBtn.addEventListener("click", () => {
+loginBtn.addEventListener("click", (evt) => {
+    evt.preventDefault();
     console.log("klick");
     let userName = inputName.value;
     let passWord = inputPsw.value;
 
     for (let i=0; i < user.length; i++) {
-        if (user[i].passWord === passWord && user[i].userName === userName) 
-            printLoginSuccess();
-            
+        if (user[i].passWord === passWord && user[i].userName === userName)
+        return printLoginSuccess();
+              
         else{
-            printLoginError();
+             printLoginError();
         }
+    
     }
-   
 })
 
     //evt.preventDefault();
