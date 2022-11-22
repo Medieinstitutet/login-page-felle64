@@ -3,11 +3,12 @@ let inputName = document.getElementById("inputName");
 let inputPsw = document.getElementById("inputPsw");
 let loginBtn = document.getElementById("loginBtn");
 
-/*let uNamePswList = [
+let uNamePswList = [
     {userName: "janne", passWord: "test"},
-    {userName: "Felix", passWord: "admin"}
+    {userName: "Felix", passWord: "123"}
 ];
-console.log(uNamePswList);*/
+
+console.log(localStorage.setItem("uName",JSON.stringify(uNamePswList)));
 
 //Felmedelande för fel inloggningsuppgifter
 function printLoginError(){
@@ -19,9 +20,9 @@ function printLoginSuccess(){
 }
 
 loginBtn.addEventListener("click", (evt) => {
-    //Fånga usrname och psw i LS
+  
     evt.preventDefault();
-
+    //Fånga usrname och psw i LS
     let userName = inputName.value;
     let passWord = inputPsw.value;
     localStorage.setItem("userName", userName);
@@ -29,7 +30,7 @@ loginBtn.addEventListener("click", (evt) => {
     console.log(userName);
     console.log(passWord);
     
-    if (userName === "admin" && passWord === "admin") {
+    if (userName === "admin" && passWord === "123") {
        printLoginSuccess();
     
     } else {
