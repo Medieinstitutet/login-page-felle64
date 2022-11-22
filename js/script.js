@@ -8,12 +8,6 @@ let user = [
     {userName: "felix", passWord: "123"}
 ];
 
-
-let i=0
-
-console.log(user[i].passWord);
-console.log(user[i].userName);
-
 //Felmedelande för fel inloggningsuppgifter temp
 function printLoginError(){
     alert("Wrong Username and/or password")
@@ -25,9 +19,11 @@ function printLoginSuccess(){
 
 loginBtn.addEventListener("click", (evt) => {
     evt.preventDefault();
-    console.log("klick");
+    //console.log("klick");
     let userName = inputName.value;
     let passWord = inputPsw.value;
+    localStorage.setItem("userName", userName);
+    localStorage.setItem("passWord", passWord);
 
     for (let i=0; i < user.length; i++) {
         if (user[i].passWord === passWord && user[i].userName === userName)
@@ -49,14 +45,3 @@ loginBtn.addEventListener("click", (evt) => {
    // console.log(userName);
    // console.log(passWord);
    
-
-
-  
-    /*if (userName === "janne" && passWord === "test") {
-       printLoginSuccess();
-    
-    } else {
-        printLoginError();
-       
-    }
-})*/
