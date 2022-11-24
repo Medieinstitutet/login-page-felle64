@@ -46,19 +46,20 @@ function printLoginError(){
 } 
 //Visar att man har loggat in och att man är inloggad
 function printLoginSuccess(){
+    let userName = inputName.value;
+    console.log("loginSucess", userName)
     loginErrorMsg[0].style.display = "none";
-    localStorage.setItem("userName", userName);
-    localStorage.setItem("passWord", passWord);
+    //localStorage.setItem("userName", userName);
     //h1.innerHTML = "Welcome " + localStorage.getItem("userName");
     location.reload();
 }
 
-loginBtn.addEventListener("click", (evt) => {
-    evt.preventDefault();
+loginBtn.addEventListener("click", () => {
+    //evt.preventDefault();
     //console.log("klick");
     let userName = inputName.value;
     let passWord = inputPsw.value;
-    
+    localStorage.setItem("userName", userName);
     for (let i=0; i < user.length; i++) {
         if (user[i].passWord === passWord && user[i].userName === userName)
         return printLoginSuccess();
@@ -71,9 +72,9 @@ loginBtn.addEventListener("click", (evt) => {
     }
 })
 
-logoutBtn.addEventListener("click", (evt) => {
+logoutBtn.addEventListener("click", () => {
     localStorage.clear()
     location.reload()
-    //inputName.value = "";
-    //inputPsw.value = "";
+    inputName.value = "";
+    inputPsw.value = "";
 })
