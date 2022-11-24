@@ -21,9 +21,9 @@ let user = [
 ];
 
 
-//Gör ett logintoken som gör att man ska stanna inloggad
+//Kollar om man är inloggad
 function loginStatus(){
-    if (localStorage.getItem("userName", "passWord")){
+    if (localStorage.getItem("userName")){
         h1.innerHTML = "Welcome " + localStorage.getItem("userName");
         logoutBtn.style.display = "block"
         inputName.style.display = "none"
@@ -31,31 +31,28 @@ function loginStatus(){
         labelUname.style.display = "none"
         labelPass.style.display = "none"
         loginBtn.style.display = "none"
+        loginErrorMsg[0].style.display = "none";
         
     }else{
         h1.innerHTML ="Welcome, please login";
     }
 }
 
-loginStatus()
+loginStatus();
 
 //Felmedelande för fel inloggningsuppgifter
 function printLoginError(){
-    //alert("Wrong Username and/or password")
     loginErrorMsg[0].style.display = "block";
 } 
 //Visar att man har loggat in och att man är inloggad
 function printLoginSuccess(){
     let userName = inputName.value;
-    console.log("loginSucess", userName)
+    //console.log("loginSucess", userName)
     loginErrorMsg[0].style.display = "none";
-    //localStorage.setItem("userName", userName);
-    //h1.innerHTML = "Welcome " + localStorage.getItem("userName");
     location.reload();
 }
 
 loginBtn.addEventListener("click", () => {
-    //evt.preventDefault();
     //console.log("klick");
     let userName = inputName.value;
     let passWord = inputPsw.value;
