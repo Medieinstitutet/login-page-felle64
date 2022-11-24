@@ -74,6 +74,6 @@ loginBtn.addEventListener("click", (evt) => {
 logoutBtn.addEventListener("click", (evt) => {
     localStorage.clear()
     location.reload()
-    inputName.value = "";
-    inputPsw.value = "";
+    //inputName.value = "";
+    //inputPsw.value = "";
 })
