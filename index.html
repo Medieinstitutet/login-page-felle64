@@ -9,18 +9,23 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Login page</h1>
-
+    <header>
+        <h1>Login page</h1>
+    </header>
     <div class="container">
-        <label for="usname"><b>Username</b></label>
+        <label id="labelUname"><b>Username</b></label>
         <input type="text" id="inputName" placeholder="Enter Username" name="uname" required><br><br>
-    
-        <label for="passw"><b>Password</b></label>
+        <label id="labelPass"><b>Password</b></label>
         <input type="text" id="inputPsw" placeholder="Enter Password" name="psw" required><br><br>
-    
         <button id="loginBtn" type="submit">Login</button>
       </div>
+      <button id="logoutBtn" type="submit">Logout</button>
+      <div class="loginErrorMsg">
+        <p>Wrong Username/Password</p>
+      </div>
 
-      <footer>This is a footer</footer>
+
+
+      <footer>This is a simple login page</footer>
 </body>
 </html>
