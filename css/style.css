@@ -25,6 +25,10 @@ b{
     margin: auto;
     width: 30%;
 }
+#loginText{
+    text-align: center;
+    margin: auto;
+}
 #loginBtn{
     margin:auto;
     padding: 10px;
@@ -32,7 +36,9 @@ b{
     background-color: aqua;
 }
 #logoutBtn{
-    margin:auto;
+    position: fixed;
+    top:0;
+    right: 0;
     padding: 10px;
     font-weight:bold;
     background-color: aqua;

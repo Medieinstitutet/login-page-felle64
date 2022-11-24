@@ -6,9 +6,12 @@ const logoutBtn = document.getElementById("logoutBtn");
 const loginErrorMsg = document.getElementsByClassName("loginErrorMsg");
 const labelUname = document.getElementById("labelUname");
 const labelPass = document.getElementById("labelPass");
-h1 = document.querySelector("h1")
+const loginText = document.getElementById("loginText");
+h1 = document.querySelector("h1");
+
 
 logoutBtn.style.display = "none";
+loginText.style.display = "none"
 loginErrorMsg[0].style.display = "none";
 
 let userName = inputName.value;
@@ -31,6 +34,7 @@ function loginStatus(){
         labelUname.style.display = "none"
         labelPass.style.display = "none"
         loginBtn.style.display = "none"
+        loginText.style.display = "block"
         loginErrorMsg[0].style.display = "none";
         
     }else{
