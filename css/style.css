@@ -25,6 +25,9 @@ b{
     margin: auto;
     width: 30%;
 }
+#logoutBtn{
+    margin:auto;
+}
 footer{
     border: 3px solid red;
     background-color: red;
@@ -34,3 +37,4 @@ footer{
     left: 0px;
     padding: 15px;
 }
+

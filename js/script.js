@@ -23,7 +23,7 @@ let user = [
 
 //Gör ett logintoken som gör att man ska stanna inloggad
 function loginStatus(){
-    if (localStorage.getItem("userName")){
+    if (localStorage.getItem("userName", "passWord")){
         h1.innerHTML = "Welcome " + localStorage.getItem("userName");
         logoutBtn.style.display = "block"
         inputName.style.display = "none"
@@ -33,21 +33,20 @@ function loginStatus(){
         loginBtn.style.display = "none"
         
     }else{
-        h1.innerHTML ="Login Page";
+        h1.innerHTML ="Welcome, please login";
     }
 }
 
 loginStatus()
 
-//Felmedelande för fel inloggningsuppgifter temp
+//Felmedelande för fel inloggningsuppgifter
 function printLoginError(){
     //alert("Wrong Username and/or password")
     loginErrorMsg[0].style.display = "block";
 } 
-//Visar att man har loggat in och att man är inloggad temp
+//Visar att man har loggat in och att man är inloggad
 function printLoginSuccess(){
-    //alert("You have successfully logged in.");
-   
+    loginErrorMsg[0].style.display = "none";
     localStorage.setItem("userName", userName);
     localStorage.setItem("passWord", passWord);
     //h1.innerHTML = "Welcome " + localStorage.getItem("userName");
@@ -75,4 +74,6 @@ loginBtn.addEventListener("click", (evt) => {
 logoutBtn.addEventListener("click", (evt) => {
     localStorage.clear()
     location.reload()
+    inputName.value = "";
+    inputPsw.value = "";
 })
