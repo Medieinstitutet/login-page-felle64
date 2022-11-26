@@ -9,7 +9,7 @@ const labelPass = document.getElementById("labelPass");
 const loginText = document.getElementById("loginText");
 h1 = document.querySelector("h1");
 
-
+//Gömmer saker som man inte ska se när man ska logga in
 logoutBtn.style.display = "none";
 loginText.style.display = "none"
 loginErrorMsg[0].style.display = "none";
@@ -17,14 +17,14 @@ loginErrorMsg[0].style.display = "none";
 let userName = inputName.value;
 let passWord = inputPsw.value;
 
-
+//Array med användare
 let user = [
     {userName: "janne", passWord: "test"},
     {userName: "felix", passWord: "123"}
 ];
 
 
-//Kollar om man är inloggad
+//Kollar om man är inloggad och byter till inloggade sidan om man är inloggad
 function loginStatus(){
     if (localStorage.getItem("userName")){
         h1.innerHTML = "Welcome " + localStorage.getItem("userName");
@@ -55,7 +55,7 @@ function printLoginSuccess(){
     loginErrorMsg[0].style.display = "none";
     location.reload();
 }
-
+//Login knappen
 loginBtn.addEventListener("click", () => {
     //console.log("klick");
     let userName = inputName.value;
@@ -72,7 +72,7 @@ loginBtn.addEventListener("click", () => {
     
     }
 })
-
+//Logout knappen
 logoutBtn.addEventListener("click", () => {
     localStorage.clear()
     location.reload()
